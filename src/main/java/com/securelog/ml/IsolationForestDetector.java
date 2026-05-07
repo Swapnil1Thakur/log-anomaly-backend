@@ -5,17 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-/**
- * Algorithm 3: Isolation Forest-Inspired Detector
- *
- * PRIMARY domain: general/unknown anomalies — traffic that deviates from
- * normal baseline without matching specific rules.
- * DELIBERATELY capped to prevent dominating over RuleBased/ZScore.
- *
- * Key design change: endpoint risk NO LONGER maps attack patterns to high scores.
- * That's RuleBased's job. IsolationForest only uses structural features:
- * latency normalization, status deviation, method rarity, path depth.
- */
+
 @Component
 public class IsolationForestDetector implements AnomalyDetector {
 
